@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="410px" height="50px" viewBox="0 0 410 50" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.4 (15575) - http://www.bohemiancoding.com/sketch -->
+    <title>img_category_heading_design</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="spec" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="heading_item" sketch:type="MSLayerGroup" transform="translate(92.000000, 9.000000)">
+            <path d="M48,18 L0,18 L0,19 L48,19 L48,18 Z M174,18 L220,18 L220,19 L174,19 L174,18 Z" id="line" fill="#BBBBBB" sketch:type="MSShapeGroup"></path>
+            <path d="M109.68,17.72 L92.48,17.72 L92.48,1.88 L107.48,1.88 L107.48,0.72 L76.44,0.72 L76.44,1.88 L91.32,1.88 L91.32,17.72 L74.4,17.72 L74.4,18.88 L91.32,18.88 L91.32,33.8 L92.48,33.8 L92.48,18.88 L109.68,18.88 L109.68,17.72 Z M79.6,4.84 C81.4,8.04 83.24,12.32 83.96,14.88 L85,14.44 C84.36,11.92 82.48,7.68 80.6,4.48 L79.6,4.84 Z M99,15.2 C100.76,12.52 102.92,8.08 104.44,4.68 L103.24,4.2 C102,7.36 99.76,12.04 98,14.76 L99,15.2 Z M146.16,30.48 L138.44,30.48 L138.44,9.64 L146.16,9.64 L146.16,30.48 Z M117.84,9.64 L125.28,9.64 L125.28,30.48 L117.84,30.48 L117.84,9.64 Z M137.28,15.72 L126.44,15.72 L126.44,9.64 L137.28,9.64 L137.28,15.72 Z M126.44,24.12 L137.28,24.12 L137.28,30.48 L126.44,30.48 L126.44,24.12 Z M137.28,22.96 L126.44,22.96 L126.44,16.88 L137.28,16.88 L137.28,22.96 Z M149.44,2 L149.44,0.84 L114.68,0.84 L114.68,2 L131.04,2 C130.56,4 129.8,6.68 129.16,8.48 L116.64,8.48 L116.64,33.88 L117.84,33.88 L117.84,31.64 L146.16,31.64 L146.16,33.88 L147.36,33.88 L147.36,8.48 L130.36,8.48 C131.04,6.64 131.8,4.08 132.4,2 L149.44,2 Z" id="平面" fill="#444444" sketch:type="MSShapeGroup"></path>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 43.1 (39012) - http://www.bohemiancoding.com/sketch -->
+    <title>icon-check</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="0" y="0" width="16" height="16" rx="2"></rect>
+    </defs>
+    <g id="导入" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="012-引导" transform="translate(-245.000000, -1095.000000)">
+            <g id="icon-check" transform="translate(245.000000, 1095.000000)">
+                <g id="Rectangle-17">
+                    <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-1"></use>
+                    <rect stroke="#CCCCCC" stroke-width="1" x="0.5" y="0.5" width="15" height="15" rx="2"></rect>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

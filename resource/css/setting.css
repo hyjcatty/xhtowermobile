@@ -1,0 +1,589 @@
+#page
+{
+    padding-bottom:100px
+}
+.wrapper
+{
+    width:992px
+}
+.wrapper.settings-page
+{
+    box-shadow:0 1px 3px rgba(34,25,25,.4);
+    -webkit-box-shadow:0 1px 3px rgba(34,25,25,.4)
+}
+#user_settings
+{
+    padding-bottom:30px;
+    background-color:#fff;
+    border-radius:4px
+}
+#user_settings h1
+{
+    font-weight:400;
+    padding:0;
+    text-align:center;
+    margin-top:20px;
+    margin:20px 0 0;
+    line-height:60px
+}
+#user_settings .setting-units
+{
+    border-top:1px solid #ededed;
+    padding:0 26px;
+    color:#8C7E7E
+}
+#user_settings .setting-units .setting-unit
+{
+    border-bottom:1px solid rgba(34,25,25,.1);
+    border-top:1px solid rgba(255,255,255,.7);
+    position:relative;
+    cursor:pointer
+}
+#user_settings .setting-units .setting-unit:hover .title
+{
+    background:url(./img/dm_list_left.png) 0 0 repeat-y #FAFAFA
+}
+#user_settings .setting-units .open
+{
+    background:#fff;
+    background:rgba(255,255,255,.5);
+    cursor:auto
+}
+#user_settings .setting-units .open:hover .title
+{
+    background:#fff
+}
+#user_settings .setting-units .setting-unit .title
+{
+    font-size:16px;
+    line-height:60px;
+    height:60px;
+    padding-left:20px;
+    color:#333;
+    font-size:18px
+}
+#user_settings .setting-units .setting-unit .edit-label
+{
+    font-size:15px;
+    line-height:60px;
+    height:60px;
+    position:absolute;
+    right:25px;
+    top:0;
+    color:#8C7E7E;
+    padding-right:16px;
+    background:url(./img/editor_arrow.png) right 25px no-repeat;
+    cursor:pointer;
+    font-size:14px
+}
+#user_settings .setting-units .open .edit-label
+{
+    background-position:right -36px;
+    -moz-user-select:none;
+    -webkit-user-select:none;
+    -ms-user-select:none
+}
+#user_settings .setting-units .setting-unit .edit-label:hover
+{
+    color:#C90000
+}
+#user_settings .setting-units .setting-unit .holder
+{
+    overflow:hidden;
+    position:relative
+}
+#user_settings .setting-units .setting-unit .holder::before
+{
+    content:"";
+    border-bottom:1px dashed rgba(34,25,25,.1);
+    display:block;
+    width:100%;
+    position:absolute;
+    left:0;
+    top:0
+}
+#user_settings .inner
+{
+    padding:20px
+}
+#user_settings .setting-units .setting-unit .list
+{
+    font-size:14px;
+    margin-left:70px
+}
+#user_settings .setting-units .setting-unit .list td
+{
+    padding:5px 0
+}
+#user_settings .setting-units .setting-unit .list .name
+{
+    text-align:right;
+    width:90px;
+    line-height:30px;
+    vertical-align:top;
+    padding-right:10px
+}
+#user_settings .setting-units .setting-unit .list .help
+{
+    padding-left:10px
+}
+#user_settings .subscription label
+{
+    font-size:16px;
+    color:#444;
+    line-height:30px;
+    cursor:pointer
+}
+#user_settings .subscription label .text
+{
+    padding-left:5px
+}
+#user_settings .subscription p
+{
+    margin:10px 0;
+    width:400px
+}
+#user_settings .subscription .now span
+{
+    color:#444
+}
+#current_avatar
+{
+    max-width:250px;
+    max-height:250px;
+    border:12px solid #fff;
+    box-shadow:0 1px 1px rgba(34,25,25,.4);
+    -moz-box-shadow:0 1px 1px rgba(34,25,25,.4);
+    -webkit-box-shadow:0 1px 1px rgba(34,25,25,.4)
+}
+#user_settings .setting-units .user-avatar .load
+{
+    position:absolute;
+    top:50%;
+    left:50%
+}
+#user_settings .setting-units .user-avatar .list td.buttons
+{
+    vertical-align:top;
+    padding-left:30px
+}
+#user_settings .setting-units .user-avatar .list td.buttons .btn
+{
+    display:block;
+    margin-bottom:15px
+}
+#user_settings .setting-units .user-avatar .list td.avatar
+{
+    vertical-align:top;
+    position:relative
+}
+#user_settings .tel-view
+{
+    display:none
+}
+#user_settings .bindings ul
+{
+    padding:0 90px;
+    font-size:14px
+}
+#user_settings .bindings ul li
+{
+    border-bottom:1px dashed rgba(34,25,25,.1);
+    line-height:70px;
+    height:70px;
+    padding-left:80px;
+    background:url(./img/bindings_logo.png) 0 10px no-repeat
+}
+#user_settings .bindings ul li:last-child
+{
+    border:0
+}
+#user_settings .bindings ul li.douban
+{
+    background-position:0 -70px
+}
+#user_settings .bindings ul li.renren
+{
+    background-position:0 -150px
+}
+#user_settings .bindings ul li.qzone
+{
+    background-position:0 -230px
+}
+#user_settings .bindings ul li.tqq
+{
+    background-position:0 -310px
+}
+#user_settings .bindings ul li.wechat
+{
+    background-position:0 -390px
+}
+#user_settings .bindings ul li .url
+{
+    padding-right:20px
+}
+#user_settings .bindings .info
+{
+    padding:0 90px 0 170px;
+    font-size:12px;
+    line-height:20px
+}
+#user_settings .setting-unit .privacy-list li
+{
+    color:#444;
+    padding:10px 0 10px 170px;
+    height:50px;
+    background:url(./img/bindings_logo.png) 90px 10px no-repeat
+}
+#user_settings .setting-unit .privacy-list li.douban
+{
+    background-position:90px -70px
+}
+#user_settings .setting-unit .privacy-list li.renren
+{
+    background-position:90px -150px
+}
+#user_settings .setting-unit .privacy-list li.qzone
+{
+    background-position:90px -230px
+}
+#user_settings .setting-unit .privacy-list li.tqq
+{
+    background-position:90px -310px
+}
+#user_settings .setting-unit .privacy-list li label
+{
+    display:block;
+    line-height:25px;
+    cursor:pointer
+}
+#user_settings .setting-unit .privacy-list li label input
+{
+    margin-right:5px
+}
+#user_settings .setting-unit .confirm
+{
+    margin:10px 0 0 170px
+}
+#_set_email .email-view.select a.verify-email
+{
+    margin-right:20px
+}
+#_set_email .email-view.select span.status
+{
+    padding-left:10px
+}
+#_set_email .email-view span.notice
+{
+    padding-left:10px
+}
+#_set_email .email-view a.deny-back
+{
+    margin-left:20px
+}
+#_set_email .email-view a.retry
+{
+    cursor:pointer
+}
+#_tel_binding .send-sms
+{
+    margin-left:20px;
+    padding:4px 12px;
+    vertical-align:top
+}
+#_tel_binding .send-sms.disabled
+{
+    border:0;
+    background-color:transparent
+}
+#_tel_binding .deny-back
+{
+    margin-left:20px;
+    cursor:pointer
+}
+#_tel_binding .icon.checked
+{
+    display:inline-block;
+    width:20px;
+    height:20px;
+    margin-left:10px;
+    background-image:url(./img/notice_icons_18.svg);
+    background-position:0 0;
+    background-repeat:no-repeat;
+    vertical-align:bottom
+}
+#_tel_binding .reset-password
+{
+    margin-left:20px
+}
+#_tel_binding span.notice
+{
+    margin-left:20px
+}
+#_set_verification label
+{
+    font-size:16px;
+    color:#444;
+    line-height:30px;
+    cursor:pointer;
+    margin-right:10px
+}
+#_set_verification label .text
+{
+    padding-left:5px
+}
+#_set_verification .verification-preview
+{
+    padding-left:25px;
+    background:url(./img/icon_v.png) 0 0 no-repeat;
+    line-height:18px;
+    height:18px;
+    margin:10px 0 10px 20px
+}
+#_set_verification .connect
+{
+    margin-left:20px
+}
+#_set_weibo_mentions .inner
+{
+    padding:20px 70px;
+    font-size:14px
+}
+#_set_weibo_mentions .binding-metion
+{
+    line-height:30px;
+    height:80px;
+    padding-left:120px;
+    background:url(./img/bindings_logo.png) 40px 10px no-repeat
+}
+#_set_weibo_mentions .select .BoardPicker
+{
+    width:310px;
+    line-height:20px
+}
+#_set_weibo_mentions .binding-notice
+{
+    line-height:16px;
+    padding-top:10px
+}
+#_set_weibo_mentions .binding-notice .go-bindings
+{
+    color:#C90000;
+    cursor:pointer;
+    font-size:15px;
+    line-height:30px
+}
+#_set_weibo_mentions .save
+{
+    margin:15px 0 0 120px
+}
+#_set_weibo_mentions .intro
+{
+    margin-top:30px
+}
+#_set_profile .go-email
+{
+    float:right;
+    color:#C90000;
+    cursor:pointer
+}
+#_set_profile .sex label
+{
+    margin-right:20px;
+    padding:5px
+}
+#_set_profile .sex label input
+{
+    margin-right:8px
+}
+#_set_profile .birthday input
+{
+    width:20px;
+    margin-right:10px
+}
+#_set_profile .birthday input:first-child
+{
+    width:50px
+}
+#_set_profile .horoscope input
+{
+    border:0;
+    box-shadow:none
+}
+#_set_subscription .go-email
+{
+    float:right;
+    color:#C90000;
+    cursor:pointer
+}
+#_set_privacy .go-bindings
+{
+    color:#C90000;
+    cursor:pointer
+}
+#_set_blocked_conversations .inner
+{
+    margin-left:170px;
+    padding-bottom:10px
+}
+#_set_blocked_conversations .inner .info
+{
+    color:#999;
+    font-size:14px
+}
+#_set_blocked_conversations .inner .info p
+{
+    line-height:1.15em
+}
+#_set_blocked_conversations .blcoked-users
+{
+    margin:20px 90px 10px 0;
+    max-height:300px;
+    overflow-y:auto;
+    height:auto
+}
+#_set_blocked_conversations .blcoked-users .none-blcoked
+{
+    color:#C90000
+}
+#_set_blocked_conversations .blcoked-users .blcoked-user
+{
+    color:#999;
+    height:40px;
+    position:relative;
+    line-height:40px;
+    margin-bottom:10px;
+    white-space:nowrap;
+    background-color:#fafafa
+}
+#_set_blocked_conversations .blcoked-users .blcoked-user span
+{
+    display:inline-block;
+    line-height:40px;
+    vertical-align:top;
+    max-width:120px;
+    text-overflow:ellipsis;
+    overflow:hidden;
+    margin:0 8px
+}
+#_set_blocked_conversations .blcoked-users .blcoked-user a
+{
+    display:inline-block;
+    height:40px;
+    cursor:pointer
+}
+#_set_blocked_conversations .blcoked-users .blcoked-user .blocked-user-avatar
+{
+    width:40px;
+    height:40px
+}
+#_set_blocked_conversations .blcoked-users .blcoked-user .user-info
+{
+    white-space:nowrap;
+    max-width:360px;
+    overflow:hidden;
+    text-overflow:ellipsis
+}
+#_set_blocked_conversations .blcoked-users .blcoked-user .remove-blocked
+{
+    position:absolute;
+    right:-8px;
+    padding:0 8px;
+    height:38px;
+    border-radius:2px;
+    border:1px solid #fafafa;
+    cursor:pointer
+}
+#_set_blocked_conversations .blcoked-users .blcoked-user .remove-blocked:hover
+{
+    color:#C90000;
+    background-color:#fff;
+    border:1px solid #ededed
+}
+#_set_blocked_conversations .blcoked-users .blcoked-user .remove-blocked:active
+{
+    background-color:#f2f2f2
+}
+#message_indicator
+{
+    visibility:hidden
+}
+#user_settings .setting-units .preview
+{
+    position:absolute;
+    left:190px;
+    top:0;
+    line-height:60px;
+    font-size:14px
+}
+#preview_avatar
+{
+    width:40px;
+    height:40px;
+    display:block;
+    margin-top:10px
+}
+#binding_previews
+{
+    padding-top:22px
+}
+#binding_previews .icon
+{
+    width:16px;
+    height:16px;
+    margin-right:20px;
+    float:left;
+    background:url(./img/icons_in_btn.png) 0 0 no-repeat
+}
+#binding_previews .wb.disabled
+{
+    background-position:0 -30px
+}
+#binding_previews .qz
+{
+    background-position:0 -120px
+}
+#binding_previews .qz.disabled
+{
+    background-position:0 -150px
+}
+#binding_previews .tq
+{
+    background-position:0 -60px
+}
+#binding_previews .tq.disabled
+{
+    background-position:0 -90px
+}
+#binding_previews .rr
+{
+    background-position:0 -180px
+}
+#binding_previews .rr.disabled
+{
+    background-position:0 -210px
+}
+#binding_previews .db
+{
+    background-position:0 -240px
+}
+#binding_previews .db.disabled
+{
+    background-position:0 -270px
+}
+#binding_previews .wc
+{
+    background-position:0 -300px
+}
+#binding_previews .wc.disabled
+{
+    background-position:0 -330px
+}
+#user_settings .setting-units #_set_avatar.setting-unit .list
+{
+    margin-left:80px
+}
+a.unbind
+{
+    margin-left:1rem
+}
