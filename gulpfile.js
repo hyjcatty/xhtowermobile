@@ -60,6 +60,8 @@ gulp.task("resourcecopy",function(){
         .pipe(gulp.dest(option.buildPath+"/image/"));
     gulp.src("./svg/**/*")
         .pipe(gulp.dest(option.buildPath+"/svg/"));
+    gulp.src("./screenshot/**/*")
+        .pipe(gulp.dest(option.buildPath+"/screenshot/"));
     gulp.src("./resource/**/*")
         .pipe(gulp.dest(option.buildPath+"/resource/"));
     /*

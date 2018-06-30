@@ -40,19 +40,27 @@ class App extends Component{
                 winHeight:600,
             },
             ifLeftShow:false,
-            ifRightShow:false
+            ifRightShow:false,
+            mapHeight:600
         };
         this._requirehead = "";
 
         this._showDetail=this.showDetail.bind(this);
         this._updateDetail=this.updateDetail.bind(this);
         this._hideDetail=this.hideDetail.bind(this);
+        this._resetMapHeight=this.resetMapHeight.bind(this);
     }
     initialize(prop,request_head){
         this._requirehead = request_head;
-        this.setState({main:prop});
+        this.setState({main:prop,mapHeight:prop.winHeight});
         this.refs.Map.update_size(prop.winWidth,prop.winHeight,request_head);
         this.refs.Detail.update_size(prop.winWidth,prop.winHeight,request_head);
+    }
+    resetMapHeight(height){
+        let local_height = this.state.main.winHeight - height;
+        if (local_height <0) local_height = 0;
+        if(this.state.mapHeight === local_height)return;
+        this.setState({mapHeight:local_height});
     }
     ifshow(){
         if(this.refs.Detail.show()){
@@ -90,21 +98,29 @@ class App extends Component{
             }
         }else{
             if(this.state.ifLeftShow){
-                leftstyle = {position:"absolute",height:this.state.main.winHeight/2,width:"100%"};
-                mainstyle = {position:"fix",height:this.state.main.winHeight/2,marginTop:this.state.main.winHeight/2,width:"100%"};
+                leftstyle = {position:"relative",width:"100%"};
+                mainstyle = {position:"relative",height:this.state.mapHeight,width:"100%"};
             }else{
-                leftstyle = {position:"absolute",height:0,width:"100%"};
-                mainstyle = {position:"fix",height:this.state.main.winHeight,marginTop:0,width:"100%"};
+                leftstyle = {position:"relative",height:0,width:"100%"};
+                mainstyle = {position:"relative",height:this.state.main.winHeight,width:"100%"};
             }
         }
         return (
             <div style={{position:"relative",background:"#DDDDDD",height:this.state.height,maxHeight:this.state.height,width:'100%',overflowY:'hidden',overflowX:'hidden'}}>
                 <div style={leftstyle}>
-                    <Detailview ref="Detail" hideDetail={this._hideDetail}/>
+                    <Detailview ref="Detail" hideDetail={this._hideDetail}
+                                resetMapHeight={this._resetMapHeight}/>
                 </div>
+
+                <div className="clearfix"></div>
                 <div style={mainstyle}>
-                    <Mapview ref="Map" showDetail={this._showDetail} updateDetail={this._updateDetail}/>
+                    <Mapview ref="Map"
+                             showDetail={this._showDetail}
+                             updateDetail={this._updateDetail}
+                    />
                 </div>
+
+                <div className="clearfix"></div>
             </div>
         );
 

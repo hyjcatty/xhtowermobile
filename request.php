@@ -1540,7 +1540,7 @@ RESPONSE:
 */
 	$body_in = $payload['body'];
 	$StatCode =$body_in["StatCode"];
-	$alarmlist= array();
+/*	$alarmlist= array();
 	$map1 = array(
 		'AlarmName'=>"噪声",
 		'AlarmEName'=> "Noise",
@@ -1617,13 +1617,94 @@ RESPONSE:
 		'StatCode'=>$StatCode,
 		'alarmlist'=> $alarmlist,
 		'vcr'=>$vcr_list
-	);
+	);*/
+	$statuslist = array();
+	$alarmlist= array();
+	$lightlist = array();
+	$photolist = array();
+	for($i=0;$i<3;$i++){
+	    $randnumber = rand(15,50);
+	    $tempString = "";
+	    for($j=0;$j<$randnumber;$j++){$tempString = $tempString."x";}
+	    $temp = array(
+	       'name'=>'状态'.(string)$i.'：',
+           'value'=> $tempString
+	    );
+	    array_push($statuslist,$temp);
+	}
+	$map2 = array(
+        'AlarmName'=>"风向",
+        'AlarmEName'=> "WD",
+        'AlarmValue'=>(string)rand(1,100),
+        'AlarmUnit'=>"mg/m3",
+        'WarningTarget'=>"false"
+    );
+    array_push($alarmlist,$map2);
+    $map3 = array(
+        'AlarmName'=>"湿度",
+        'AlarmEName'=> "Wet",
+        'AlarmValue'=>(string)rand(1,100),
+        'AlarmUnit'=>"%",
+        'WarningTarget'=>"false"
+    );
+    array_push($alarmlist,$map3);
+    $map4 = array(
+        'AlarmName'=>"温度",
+        'AlarmEName'=> "Temperature",
+        'AlarmValue'=>(string)rand(10,50),
+        'AlarmUnit'=>"C",
+        'WarningTarget'=>"false"
+    );
+    array_push($alarmlist,$map4);
+    $map5 = array(
+        'AlarmName'=>"细颗粒物",
+        'AlarmEName'=> "PM",
+        'AlarmValue'=>(string)rand(10,400),
+        'AlarmUnit'=>"ug/m3",
+        'WarningTarget'=>"false"
+    );
+    array_push($alarmlist,$map5);
+
+    $light = array(
+        'name'=>"灯带组1/2",
+        'value'=>"常亮中"
+    );
+    array_push($lightlist,$light);
+    $light = array(
+        'name'=>"灯带组3/4",
+        'value'=>"常亮中"
+    );
+    array_push($lightlist,$light);
+    $light = array(
+        'name'=>"广告屏",
+        'value'=>"正在播放：世界杯广告".((string)rand(1,5))
+    );
+    array_push($lightlist,$light);
+    for($i=0;$i<3;$i++){
+        $temp = array(
+           'name'=>'摄像头'.(String)$i."：",
+           'value'=>"工作正常",
+           'url'=> "./screenshot/".(string)(rand(1,5)).".png"
+        );
+        array_push($photolist,$temp);
+    }
+    $body=array(
+        'statustitle' => '状态',
+        'statuslist'=>$statuslist,
+        'alarmtitle' => '传感器',
+        'alarmlist'=>$alarmlist,
+        'lighttitle' => '灯带',
+        'lightlist'=>$lightlist,
+        'phototitle' => '摄像头',
+        'photolist'=>$photolist
+    );
 	$retval=array(
 		'status'=>'true',
 		'ret'=> $body,
 		'msg'=>'success',
 		'auth'=>'true'
 	);
+
     $jsonencode = _encode($retval);
 	echo $jsonencode; break;
 case "MonitorList":
