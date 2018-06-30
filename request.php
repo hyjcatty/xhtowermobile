@@ -1657,7 +1657,7 @@ RESPONSE:
     );
     array_push($alarmlist,$map4);
     $map5 = array(
-        'AlarmName'=>"细颗粒物",
+        'AlarmName'=>"颗粒",
         'AlarmEName'=> "PM",
         'AlarmValue'=>(string)rand(10,400),
         'AlarmUnit'=>"ug/m3",

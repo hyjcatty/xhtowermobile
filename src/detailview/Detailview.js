@@ -106,7 +106,7 @@ export default class head extends Component {
     }
     componentDidUpdate(){
         let height = document.getElementById("detail_panel").offsetHeight;
-        console.log("offsetHeight:"+height);
+        //console.log("offsetHeight:"+height);
         this.props.resetMapHeight(height);
     }
 
