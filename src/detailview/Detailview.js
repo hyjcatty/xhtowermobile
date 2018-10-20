@@ -9,7 +9,7 @@ import classNames from 'classnames';
 import '../../resource/css/font-awesome.min.css';
 import './Detailview.css';
 
-export default class head extends Component {
+export default class detailview extends Component {
     constructor(props) {
         super(props);
         this.state={
@@ -51,6 +51,13 @@ export default class head extends Component {
     getSelectMonitor(title){
         var temp = title.split(":");
         this.setState({stateCode:temp[0],stateName:temp[1]},this.devalarmfetch);
+    }
+    ifshow(){
+        if(this.state.display === "block"){
+            return true;
+        }else{
+            return false;
+        }
     }
     show(bool){
         if(bool){
@@ -131,7 +138,7 @@ export default class head extends Component {
             light_more:"none",
             photo_hide:"none",
             photo_panel:"none"
-        }});
+        }},this.props.mapGoCenter);
     }
     clickSensorHide(){
         this.setState({
@@ -145,7 +152,7 @@ export default class head extends Component {
                 light_more:"none",
                 photo_hide:"none",
                 photo_panel:"none"
-            }});
+            }},this.props.mapGoCenter);
     }
 
     clickSensorMore(){
@@ -160,7 +167,7 @@ export default class head extends Component {
                 light_more:"block",
                 photo_hide:"none",
                 photo_panel:"none"
-            }});
+            }},this.props.mapGoCenter);
     }
     clickLightHide(){
         this.setState({
@@ -174,7 +181,7 @@ export default class head extends Component {
                 light_more:"none",
                 photo_hide:"none",
                 photo_panel:"none"
-            }});
+            }},this.props.mapGoCenter);
     }
     clickLightMore(){
         this.setState({
@@ -188,7 +195,7 @@ export default class head extends Component {
                 light_more:"none",
                 photo_hide:"block",
                 photo_panel:"block"
-            }});
+            }},this.props.mapGoCenter);
     }
     clickPhotoHide(){
         this.setState({
@@ -202,7 +209,7 @@ export default class head extends Component {
                 light_more:"block",
                 photo_hide:"none",
                 photo_panel:"none"
-            }});
+            }},this.props.mapGoCenter);
     }
     render() {
 

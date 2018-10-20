@@ -11,6 +11,7 @@ import classNames from 'classnames';
 
 import Billboardview from "../billboardview/Billboardview"
 import Chartview from "../chartview/Chartview"
+import Head from "../head/Head"
 import Detailview from "../detailview/Detailview"
 import Mapview from "../mapview/Mapview"
 import './App.css';
@@ -44,17 +45,19 @@ class App extends Component{
             mapHeight:600
         };
         this._requirehead = "";
-
+        this._fixheadheight=58;
         this._showDetail=this.showDetail.bind(this);
         this._updateDetail=this.updateDetail.bind(this);
         this._hideDetail=this.hideDetail.bind(this);
         this._resetMapHeight=this.resetMapHeight.bind(this);
+        this._mapGoCenter=this.goCenter.bind(this);
     }
     initialize(prop,request_head){
         this._requirehead = request_head;
-        this.setState({main:prop,mapHeight:prop.winHeight});
-        this.refs.Map.update_size(prop.winWidth,prop.winHeight,request_head);
-        this.refs.Detail.update_size(prop.winWidth,prop.winHeight,request_head);
+        this.setState({main:prop,mapHeight:(prop.winHeight-this._fixheadheight)});
+        this.refs.Map.update_size(prop.winWidth,(prop.winHeight-this._fixheadheight),request_head);
+        this.refs.Detail.update_size(prop.winWidth,(prop.winHeight-this._fixheadheight),request_head);
+        this.refs.Head.update_size(prop);
     }
     resetMapHeight(height){
         let local_height = this.state.main.winHeight - height;
@@ -63,10 +66,10 @@ class App extends Component{
         this.setState({mapHeight:local_height});
     }
     ifshow(){
-        if(this.refs.Detail.show()){
-            return true;
-        }
-        return false;
+        if(this.refs.Detail !== undefined)
+            return this.refs.Detail.ifshow();
+        else
+            return false;
     }
     updateMonitorList(list){
         this.setState({monitorList:list});
@@ -74,20 +77,21 @@ class App extends Component{
     updateDetail(Detail){
         this.refs.Detail.setDetail(Detail);
     }
-    goCenter(point){
-        this.refs.Map.recenter(point);
+    goCenter(){
+        setTimeout(()=>{this.refs.Map.center();},300);
     }
-    showDetail(point){
+    showDetail(){
         this.refs.Detail.show(true);
-        this.setState({ifLeftShow:true},()=>{this.goCenter(point)});
+        this.setState({ifLeftShow:true},this.goCenter);
     }
     hideDetail(){
         this.refs.Detail.show(false);
-        this.setState({ifLeftShow:false});
+        this.setState({ifLeftShow:false},()=>{this.goCenter();this.render();});
     }
-    render() {
+    render(){
         let leftstyle;
         let mainstyle;
+        let headdisplay="block";
         if(this.state.main.ifH){
             if(this.state.ifLeftShow){
                 leftstyle = {position:"absolute",height:this.state.main.winHeight,width:this.state.main.winWidth/2};
@@ -95,6 +99,11 @@ class App extends Component{
             }else{
                 leftstyle = {position:"absolute",height:this.state.main.winHeight,width:0};
                 mainstyle = {position:"relative",height:this.state.main.winHeight,marginLeft:0,width:"100%"};
+            }
+            if(this.state.ifLeftShow){
+                headdisplay="block";
+            }else{
+                headdisplay="block";
             }
         }else{
             if(this.state.ifLeftShow){
@@ -104,23 +113,35 @@ class App extends Component{
                 leftstyle = {position:"relative",height:0,width:"100%"};
                 mainstyle = {position:"relative",height:this.state.main.winHeight,width:"100%"};
             }
+
+            if(this.state.ifLeftShow){
+                headdisplay="none";
+            }else{
+                headdisplay="block";
+            }
         }
         return (
-            <div style={{position:"relative",background:"#DDDDDD",height:this.state.height,maxHeight:this.state.height,width:'100%',overflowY:'hidden',overflowX:'hidden'}}>
-                <div style={leftstyle}>
-                    <Detailview ref="Detail" hideDetail={this._hideDetail}
-                                resetMapHeight={this._resetMapHeight}/>
+            <div>
+                <div style={{display:headdisplay}}>
+                    <Head ref="Head" />
                 </div>
+                <div style={{position:"relative",background:"#DDDDDD",height:this.state.height,maxHeight:this.state.height,width:'100%',overflowY:'hidden',overflowX:'hidden'}}>
+                    <div style={leftstyle}>
+                        <Detailview ref="Detail" hideDetail={this._hideDetail}
+                                    resetMapHeight={this._resetMapHeight}
+                                    mapGoCenter={this._mapGoCenter}/>
+                    </div>
 
-                <div className="clearfix"></div>
-                <div style={mainstyle}>
-                    <Mapview ref="Map"
-                             showDetail={this._showDetail}
-                             updateDetail={this._updateDetail}
-                    />
+                    <div className="clearfix"></div>
+                    <div style={mainstyle}>
+                        <Mapview ref="Map"
+                                 showDetail={this._showDetail}
+                                 updateDetail={this._updateDetail}
+                        />
+                    </div>
+
+                    <div className="clearfix"></div>
                 </div>
-
-                <div className="clearfix"></div>
             </div>
         );
 

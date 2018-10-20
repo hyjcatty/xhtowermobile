@@ -9,7 +9,7 @@ import classNames from 'classnames';
 import '../../resource/css/font-awesome.min.css';
 import './Mapview.css';
 
-export default class head extends Component {
+export default class mapview extends Component {
     constructor(props) {
         super(props);
         this.state={
@@ -17,7 +17,8 @@ export default class head extends Component {
             width:1024,
             display:"block",
             monitorList:null,
-            requestHead:""
+            requestHead:"",
+            center:null
         }
         this._maphandle = null;
     }
@@ -79,10 +80,18 @@ export default class head extends Component {
     }
     showDetailTab(Detail,point){
         this.props.updateDetail(Detail);
-        this.props.showDetail(point);
+        this.props.showDetail();
     }
     recenter(point){
-        this._maphandle.panTo(point,false);
+        this.setState({center:point},()=>{
+            this.center();
+        })
+    }
+    center(){
+        if(this.state.center!=null){
+            //console.log("Map center to:"+this.state.center.lng+"|"+this.state.center.lat);
+            this._maphandle.panTo(this.state.center,false);
+        }
     }
     addmarker(){
         let myIcon = new BMap.Icon("./resource/images/map-marker-ball-pink-small.png", new BMap.Size(48, 48),{
@@ -96,6 +105,7 @@ export default class head extends Component {
             this._maphandle.addOverlay(marker);
             marker.addEventListener("click",function(){
                 xtemp.showDetailTab(this.getTitle(),t_point);
+                xtemp.setState({center:t_point});
                 //xtemp.recenter(t_point);
             });
         }
